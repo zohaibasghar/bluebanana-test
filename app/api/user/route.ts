@@ -1,5 +1,4 @@
-import { NextApiRequest } from "next";
 
-export function GET(req: NextApiRequest) {
+export function GET() {
   return Response.json({ message: "Hello from Zohaib!" });
 }
