@@ -19,7 +19,7 @@ export default function AppContextWrapper({
   };
   useEffect(() => {
     const localUser = JSON.parse(localStorage.getItem("user") as string);
-    if (localUser.email) {
+    if (localUser?.email) {
       saveUser(localUser);
     }
   }, []);

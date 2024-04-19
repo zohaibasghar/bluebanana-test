@@ -12,7 +12,7 @@ const FakeList = () => {
   const [posts, setPosts] = useState<PostsData[]>([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    if (!user.email && !user.password) {
+    if (!user?.email && !user?.password) {
       redirect("/signup");
     }
     fetchPosts();

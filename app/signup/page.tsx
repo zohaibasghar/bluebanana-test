@@ -14,7 +14,7 @@ const Signup = () => {
   }
 
   useEffect(() => {
-    if (user.email && user.password) {
+    if (user?.email && user?.password) {
       redirect("/");
     }
   }, [user]);

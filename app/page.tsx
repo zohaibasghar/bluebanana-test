@@ -9,7 +9,7 @@ export default function Home() {
   const { logout, user } = useAppContext();
 
   useEffect(() => {
-    if (!user.email && !user.password) {
+    if (!user?.email && !user?.password) {
       redirect("/signup");
     }
   }, [user]);
