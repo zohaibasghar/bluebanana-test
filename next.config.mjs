@@ -3,12 +3,17 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        pathname: '**',
+        protocol: "https",
+        hostname: "www.bluebanana.agency",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+        pathname: "**",
       },
     ],
-  }
+  },
 };
 
 export default nextConfig;

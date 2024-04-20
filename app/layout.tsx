@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <AppContextWrapper>
           <PostContextWrapper>
-            <ToastContainer theme="dark" autoClose={3000} />
+            <ToastContainer theme="light" autoClose={3000} />
             {children}
           </PostContextWrapper>
         </AppContextWrapper>
