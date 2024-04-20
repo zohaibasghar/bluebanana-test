@@ -28,12 +28,12 @@ const Signup = () => {
     toast.success("You are now registered!");
   }
   return (
-    <div className="h-[100vh] flex items-center flex-col">
+    <div className="h-[100vh] flex items-center flex-col w-full">
       <h2 className="my-10 text-blue-400 font-semibold text-xl">
         Register New account
       </h2>
       <form
-        className="max-w-xl mx-auto border border-1 border-blue-400 p-10 rounded-xl shadow-md shadow-blue-400"
+        className="mx-auto border w-[90%] sm:w-90 md:w-1/2 lg:w-1/3 border-1 border-blue-400 p-10 rounded-xl shadow-md shadow-blue-400"
         onSubmit={handleSubmit}
       >
         <div className="mb-5">

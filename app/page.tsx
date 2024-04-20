@@ -3,7 +3,6 @@ import { useAppContext } from "@/context";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { useEffect } from "react";
-import { toast } from "react-toastify";
 
 export default function Home() {
   const { logout, user } = useAppContext();

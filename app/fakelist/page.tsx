@@ -1,43 +1,24 @@
 "use client";
-import { useAppContext } from "@/context";
-import { PostsData } from "@/types";
+
+import { usePostContext } from "@/context/PostsContext";
 import Image from "next/image";
-import { redirect, useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
 
 const FakeList = () => {
-  const { user } = useAppContext();
-
+  const { posts, fetchPosts, handleClear, handleDelete, loading } =
+    usePostContext();
   const router = useRouter();
-  const [posts, setPosts] = useState<PostsData[]>([]);
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    if (!user?.email && !user?.password) {
-      redirect("/signup");
-    }
-    fetchPosts();
-  }, [user]);
-  const fetchPosts = async () => {
-    setLoading(true);
-    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const json = await res.json();
-    setPosts(json);
-    setLoading(false);
-  };
 
-  const handleDelete = (index: number) => {
-    const copy = [...posts];
-    copy.splice(index, 1);
-    setPosts(copy);
-  };
-  const handleClear = () => {
-    setPosts([]);
-  };
+  useEffect(() => {
+    fetchPosts();
+  }, []);
+
   const records = posts.length ? (
     posts?.map((post, index) => {
       return (
         <li
-          className="pb-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4  shadow-lg shadow-gray-900"
+          className="py-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 shadow-lg shadow-gray-900 border border-1 border-blue-500 rounded-md px-2"
           key={post.id}
         >
           <div className="flex items-center space-x-4">
@@ -74,7 +55,7 @@ const FakeList = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-evenly">
+      <div className="flex items-center justify-evenly sticky top-0 bg-black">
         <button
           className="flex text-2xl font-bold items-center justify-center px-2 text-blue-500  rounded-xs cursor-pointer hover:bg-white-600 rounded-md"
           onClick={() => router.back()}
@@ -95,7 +76,7 @@ const FakeList = () => {
           Clear posts
         </button>
       </div>
-      <ul className="justify-center gap-10 flex flex-wrap px-10">
+      <ul className="justify-center gap-6 flex flex-wrap px-10">
         {loading ? <div className="mx-auto my-20">Loading...</div> : records}
       </ul>
     </div>
