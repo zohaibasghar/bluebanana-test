@@ -12,6 +12,7 @@ const FakeList = () => {
 
   useEffect(() => {
     fetchPosts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const records = posts.length ? (

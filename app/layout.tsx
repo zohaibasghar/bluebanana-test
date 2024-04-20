@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
-import AppContextWrapper from "@/context";
+import AppContextWrapper from "@/context/AuthContext";
 import { ToastContainer } from "react-toastify";
 import PostContextWrapper from "@/context/PostsContext";
 

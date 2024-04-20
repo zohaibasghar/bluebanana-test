@@ -1,10 +1,10 @@
 "use client";
-import { useAppContext } from "@/context";
+import { useAppContext } from "@/context/AuthContext";
 import { redirect } from "next/navigation";
 import React, { FormEvent, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-const Signup = () => {
+const Signup = (): React.ReactNode => {
   const { user, saveUser } = useAppContext();
 
   const [form, setForm] = useState({ email: "", password: "", cPassword: "" });
@@ -69,6 +69,7 @@ const Signup = () => {
             name="password"
             className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
             required
+            minLength={8}
           />
         </div>
         <div className="mb-5">

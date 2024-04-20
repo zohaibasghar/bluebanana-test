@@ -1,5 +1,5 @@
 "use client";
-import { useAppContext } from "@/context";
+import { useAppContext } from "@/context/AuthContext";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { useEffect } from "react";

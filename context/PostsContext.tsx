@@ -1,8 +1,9 @@
 "use client";
+import { PostsData } from "@/types";
 import { ReactNode, createContext, useContext, useState } from "react";
 
 interface PostContextType {
-  posts: any[];
+  posts: PostsData[];
   loading: boolean;
   fetchPosts: () => Promise<void>;
   handleDelete: (index: number) => void;
