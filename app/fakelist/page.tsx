@@ -40,10 +40,10 @@ const FakeList = () => {
               </p>
             </div>
             <div
-              className="flex items-center justify-center w-8 h-8 bg-red-500 text-white rounded-full cursor-pointer hover:bg-red-600"
+              className="flex items-center justify-center w-8 h-8 rounded-full cursor-pointer hover:bg-red-600"
               onClick={() => handleDelete(index)}
             >
-              X
+              &#x274C;
             </div>
           </div>
         </li>
