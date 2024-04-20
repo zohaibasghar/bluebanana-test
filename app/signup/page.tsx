@@ -29,7 +29,7 @@ const Signup = (): React.ReactNode => {
   }
   return (
     <div className="h-[100vh] flex items-center flex-col w-full">
-      <h2 className="my-10 text-blue-400 font-semibold text-xl">
+      <h2 className="my-10 text-blue-700 font-semibold text-xl">
         Register New account
       </h2>
       <form
